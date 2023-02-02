@@ -1,7 +1,12 @@
-package test.prueba;
+/*  =======================================================
+    ============ CHAR Y CARACTERES ESPECIALES =============
+    =======================================================
 
-public class test {
 
+    char
+    ====
+*/
+public class PrimitivoCharacter {
     public static void main(String[] args) {
 
         char espacio = ' ';
@@ -22,8 +27,19 @@ public class test {
 
     }
 }
-/*
+/* Esto nos devuelve:
 
-
+Mi nombre es = Alfonso
+Mi nombre es = Alfonso
+Mi nombre es Alfonso
+Mi nombre es =  Alfonso
+Mi nombre es =
+Alfonso
+Alfonsore es =
+Minombre        es =    Alfonso
+Mi nombre es =
+Alfonso
+Mi nombre es =
+Alfonso
 
 */
