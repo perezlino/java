@@ -3,27 +3,14 @@ package test.prueba;
 public class test {
 
     public static void main(String[] args) {
+            
+        String archivo = "imagen.png";
+        System.out.println("Cantidad de caracteres del valor de 'archivo' = " + archivo.length());
+        System.out.println("Capturar la extensión del archivo = " + archivo.substring(archivo.indexOf(".") + 1));
 
-        char espacio = ' ';
-        char espacioUnicode = '\u0020';
-        char retroceso = '\b';  
-        char tabulador = '\t';
-        char nuevaLinea = '\n';
-        char retornoCarro = '\r';
-        System.out.println("Mi nombre es =" + espacio + "Alfonso");
-        System.out.println("Mi nombre es =" + espacioUnicode + "Alfonso");
-        System.out.println("Mi nombre es =" + retroceso + "Alfonso");
-        System.out.println("Mi nombre es =" + tabulador + "Alfonso");
-        System.out.println("Mi nombre es =" + nuevaLinea + "Alfonso");
-        System.out.println("Mi nombre es =" + retornoCarro + "Alfonso");
-        System.out.println("Mi \bnombre \tes = " + tabulador + "Alfonso");
-        System.out.println("Mi nombre es = " + System.getProperty("line.separator") + "Alfonso");
-        System.out.println("Mi nombre es = " + System.lineSeparator() + "Alfonso");
-
+        String foto = "imagen.hd.jpeg";
+        int i = foto.lastIndexOf(".");
+        System.out.println("Cantidad de caracteres del valor de 'archivo' = " + foto.length());
+        System.out.println("Capturar la extensión del archivo = " + foto.substring(i + 1));
     }
 }
-/*
-
-
-
-*/
