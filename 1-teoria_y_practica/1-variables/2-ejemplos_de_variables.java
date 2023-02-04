@@ -26,14 +26,29 @@
             int numero = 11;
             System.out.println("numero = " + numero);
 
+            /* También puede declarar una variable sin asignar el valor y asignar el valor más adelante: */
+            int miNumero;
+            miNumero = 25;
+            System.out.println("miNumero = " + miNumero);
+
+            /* Tenga en cuenta que si asigna un nuevo valor a una variable existente, sobrescribirá el valor 
+            anterior: */
+            int miEdad = 36;
+            miEdad = 46;
+            System.out.println("miEdad = " + miEdad);
+
+            /* También puede asignar el mismo valor a varias variables en una línea: */
+            int x, y, z;
+            x = y = z = 50;
+            System.out.println("suma de variables" + x + y + z);            
+
             /* También existe var que es un tipo de variable dinámica. Identifica el tipo de dato de manera 
                automática: */
             var number = 10;
             System.out.println("(number + number) = " + (number+number));
 
             /* Yo puedo acá definir esta variable que exista en nuestro contexto, en nuestra aplicación y 
-                después le asignó valor. Después le doy alguna instancia, algún objeto. En este caso el tipo 
-                es String. */
+                después le asignó valor. Después le doy alguna instancia, algún objeto. */
             String nombre;
             nombre = "Alfonso";
 
@@ -47,6 +62,11 @@
                 nombre = "Juan";
                 System.out.println("nombre = " + nombre);
             }
+
+            /* Si no desea que otros (o usted mismo) sobrescriban los valores existentes, use la palabra clave "final" 
+               (esto declarará la variable como "final" o "constante", lo que significa inmutable y de solo lectura): */
+               final int myNum = 15;
+               myNum = 20;  // generará un error: no se puede asignar un valor a una variable final
         }
 
 }
@@ -55,6 +75,8 @@
 Hola Mundo desde Java
 saludar.toUpperCase() = HOLA MUNDO DESDE JAVA
 numero = 11
+miNumero = 25
+miEdad = 46
 (number + number) = 20
 nombre = Juan
 
