@@ -1,22 +1,104 @@
 package test.prueba;
-
-
+import java.util.Arrays;
 
 public class test {
-        public static void main(String[] args) {
 
-        
-            //Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
 
-            double area; // El area a calcular
+        int[] a, pares, impares;
+        int totalPares = 0, totalImpares = 0;
+        a = new int[10];
 
-            double radio; // El radio a ingresar
+        a[0] = 1;
+        a[1] = 2;
+        a[2] = 3;
+        a[3] = 4;
+        a[4] = 5;
+        a[5] = 6;
+        a[6] = 7;
+        a[7] = 8;
+        a[8] = 9;
+        a[9] = 10;                                                            
 
-            System.out.println("Ingrese el radio del circulo: "); // 2
-            radio = 2;
+        for(int i = 0; i < a.length; i++){
 
-            area = Math.PI * Math.pow(radio, 2);
-
-            System.out.println("El área de su circunferencia de radio " + radio + " es igual a: " + area);
+            if(a[i]%2 == 0){
+                totalPares++;
+            } else {
+                totalImpares++;
+            }
         }
+        System.out.println("totalPares = " + totalPares);   // totalPares = 5
+        System.out.println("totalPares = " + totalImpares); // totalImpares = 5
+
+
+        pares = new int[totalPares];      // pares = new int[5];
+        impares = new int[totalImpares];  // impares = new int[5]
+
+        int j = 0;
+        int k = 0;
+        for(int i = 0; i < a.length; i++){
+            if(a[i] % 2 == 0){
+                pares[j++] = a[i];
+            } else {
+                impares[k++] = a[i];
+            }
+        }
+/* 
+        if(a[0] % 2 == 0) ==> if(1 % 2 == 0) ==> false
+        else
+        impares[0] = a[0] = 1     -----------> Luego 'k' se aumenta en 1    
+
+        if(a[1] % 2 == 0) ==> if(2 % 2 == 0) ==> true
+        pares[0] = a[1] = 2     -----------> Luego 'j' se aumenta en 1  
+
+        if(a[2] % 2 == 0) ==> if(3 % 2 == 0) ==> false
+        else
+        impares[1] = a[2] = 3     -----------> Luego 'k' se aumenta en 1    
+
+        if(a[3] % 2 == 0) ==> if(4 % 2 == 0) ==> true
+        pares[1] = a[3] = 4     -----------> Luego 'j' se aumenta en 1  
+
+        if(a[4] % 2 == 0) ==> if(5 % 2 == 0) ==> false
+        else
+        impares[2] = a[4] = 5     -----------> Luego 'k' se aumenta en 1    
+
+        if(a[5] % 2 == 0) ==> if(6 % 2 == 0) ==> true
+        pares[2] = a[5] = 6     -----------> Luego 'j' se aumenta en 1  
+
+        if(a[6] % 2 == 0) ==> if(7 % 2 == 0) ==> false
+        else
+        impares[3] = a[6] = 7     -----------> Luego 'k' se aumenta en 1    
+
+        if(a[7] % 2 == 0) ==> if(8 % 2 == 0) ==> true
+        pares[3] = a[7] = 8     -----------> Luego 'j' se aumenta en 1  
+
+        if(a[8] % 2 == 0) ==> if(9 % 2 == 0) ==> false
+        else
+        impares[4] = a[8] = 9     -----------> Luego 'k' se aumenta en 1    
+
+        if(a[9] % 2 == 0) ==> if(10 % 2 == 0) ==> true
+        pares[4] = a[9] = 10     -----------> Luego 'j' se aumenta en 1 
+
+        Se sale del FOR dado que no se cumple la condicion 10 < 10
+*/
+
+        System.out.println("Pares");
+        for(int i = 0; i < pares.length; i++){
+            System.out.print(pares[i] + " ");
+        }
+/* 
+        Pares
+        2 4 6 8 10
+*/
+
+        System.out.println("\nImpares");
+        for(int i = 0; i < impares.length; i++){
+            System.out.print(impares[i] + " ");
+        }
+/* 
+        Impares
+        1 3 5 7 9
+*/             
     }
+}
