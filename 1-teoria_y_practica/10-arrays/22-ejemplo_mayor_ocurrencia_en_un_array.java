@@ -1,8 +1,25 @@
-package test.prueba;
-import java.util.Arrays;
+/*  ======================================================
+    ============ MAYOR OCURRENCIA EN UN ARRAY ============
+    ======================================================
 
-public class test {
+    Para la tarea se debe crear un arreglo con 10 elementos (enteros en el rango de 1 a 9). Escriba 
+    un programa que imprima el número que tiene más ocurrencias en el arreglo y también imprimir la 
+    cantidad de veces que aparece en el array.
 
+    Por ejemplo, para el array: {1, 2, 3, 3, 4, 5, 5, 5, 6, 7}
+
+    Como resultado debería imprimir lo siguiente:
+
+        - La mayor ocurrencias es: 3 
+        - El elemento que mas se repite es: 5
+
+    En el ejemplo, el elemento que más se repite en el array es el número 5 con una ocurrencia de 
+    3 veces.
+
+*/
+    import java.util.Scanner;
+
+    public class ProgramaImprimirMasOcurrencias {
 
         public static void main(String[] args) {
             
@@ -154,56 +171,56 @@ public class test {
 */
                 arregloCantidadValores[i] = cantidad;
                 System.out.println(arregloCantidadValores[i]);
-            }
+                }
 /* 
-            arregloCantidadValores[0] = 1 (Luego entra al primer FOR y se reinicia 'cantidad')
-            arregloCantidadValores[1] = 1
-            arregloCantidadValores[2] = 2
-            arregloCantidadValores[3] = 2
-            arregloCantidadValores[4] = 1
-            arregloCantidadValores[5] = 3
-            arregloCantidadValores[6] = 3
-            arregloCantidadValores[7] = 3
-            arregloCantidadValores[8] = 1
-            arregloCantidadValores[9] = 1
+                arregloCantidadValores[0] = 1 (Luego entra al primer FOR y se reinicia 'cantidad')
+                arregloCantidadValores[1] = 1
+                arregloCantidadValores[2] = 2
+                arregloCantidadValores[3] = 2
+                arregloCantidadValores[4] = 1
+                arregloCantidadValores[5] = 3
+                arregloCantidadValores[6] = 3
+                arregloCantidadValores[7] = 3
+                arregloCantidadValores[8] = 1
+                arregloCantidadValores[9] = 1
 */
 
-            // Luego obtenemos el valor de la mayor ocurrencia (mas veces repetido)
-            // y el indice o pocicion para obtener el numero mas repetido
-            int indice = 0; // indice del elemento con la mayor ocurrencia (mas repetido)
-            int max = 0; // la cantidad mayor de veces (la mayor ocurrencia)
-            for (int i = 0; i < 10; i++) {
+                // Luego obtenemos el valor de la mayor ocurrencia (mas veces repetido)
+                // y el indice o pocicion para obtener el numero mas repetido
+                int indice = 0; // indice del elemento con la mayor ocurrencia (mas repetido)
+                int max = 0; // la cantidad mayor de veces (la mayor ocurrencia)
+                for (int i = 0; i < 10; i++) {
                 if (max < arregloCantidadValores[i]) {
                     max = arregloCantidadValores[i];
                     indice = i;
                 }
-            }
+                }
 /* 
-            si (0 < arregloCantidadValores[0]) ==> true
-            max = 1
-            indice = 0
-            si (1 < arregloCantidadValores[1]) ==> false
-            si (1 < arregloCantidadValores[2]) ==> true
-            max = 2
-            indice = 2
-            si (2 < arregloCantidadValores[3]) ==> false
-            si (2 < arregloCantidadValores[4]) ==> false
-            si (2 < arregloCantidadValores[5]) ==> true
-            max = 3
-            indice = 5
-            si (3 < arregloCantidadValores[6]) ==> false
-            si (3 < arregloCantidadValores[7]) ==> false
-            si (3 < arregloCantidadValores[8]) ==> false
-            si (3 < arregloCantidadValores[9]) ==> false
+                si (0 < arregloCantidadValores[0]) ==> true
+                max = 1
+                indice = 0
+                si (1 < arregloCantidadValores[1]) ==> false
+                si (1 < arregloCantidadValores[2]) ==> true
+                max = 2
+                indice = 2
+                si (2 < arregloCantidadValores[3]) ==> false
+                si (2 < arregloCantidadValores[4]) ==> false
+                si (2 < arregloCantidadValores[5]) ==> true
+                max = 3
+                indice = 5
+                si (3 < arregloCantidadValores[6]) ==> false
+                si (3 < arregloCantidadValores[7]) ==> false
+                si (3 < arregloCantidadValores[8]) ==> false
+                si (3 < arregloCantidadValores[9]) ==> false
 */
 
-            System.out.println("La mayor ocurrencia es: " + max);
-            System.out.println("El elemento que mas se repite es: " + array[indice]);
-            System.out.println("el elemento " + array[indice] + " esta repetido " + max + " veces!");
-        }
+                System.out.println("La mayor ocurrencia es: " + max);
+                System.out.println("El elemento que mas se repite es: " + array[indice]);
+                System.out.println("el elemento " + array[indice] + " esta repetido " + max + " veces!");
+                }
 /* 
-        La mayor ocurrencia es: 3
-        El elemento que mas se repite es: array[5] = 5
-        el elemento 5 esta repetido 3 veces!
+                La mayor ocurrencia es: 3
+                El elemento que mas se repite es: array[5] = 5
+                el elemento 5 esta repetido 3 veces!
 */        
-    }
+}
