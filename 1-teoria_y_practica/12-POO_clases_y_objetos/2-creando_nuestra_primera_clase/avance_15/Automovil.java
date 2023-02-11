@@ -1,47 +1,39 @@
-package test.prueba;
+/*  METODOS Y ATRIBUTOS ESTATICOS
+    =============================
 
-
-/*  ORDEN DE LA CLASE 
-    =================
-
-    Siempre primero vienen los atributos. Luego el constructor o los constructores. Después vienen los 
-    métodos setter o getter. Y después, los métodos de operación que realizan cálculo, consultas, lo 
-    que sea. Y después, por ejemplo, pueden ir los métodos que queramos sobrescribir o reemplazar de la 
-    clase padre (sobre escritura de método).
+    Entonces, recordando un atributo o método estático de la clase, no le pertenece a la instancia del
+    objeto en sí, sino de la clase. Por lo tanto, es compartido por cualquier objeto de esa clase. De 
+    tal forma que si un objeto en particular modifica este valor estático, se va a modificar también
+    para el resto. Se podría decir que es un atributo genérico y compartido por todas la instancias de 
+    la clase.
 
 */
-
-
 public class Automovil {
-
-    // Vamos a generar un id para cada objeto a medida que se van creando
-    // Por defecto, comienza en cero. No es necesario indicar ningun valor.
-    private int id;
 
     private String fabricante;
     private String modelo;
     private String color = "Gris";
     private double cilindrada;
     private int capacidadEstanque = 40;
-    private static String colorPatente = "Naranja";
 
-    // Por defecto, comienza en cero. No es necesario indicar ningun valor.
-    private static int ultimoId;
+    // Vamos a crear un 'atributo estatico'. Por ahora lo dejamos en 'default'. Sin 'private' ni 'public'.
+    // Por lo tanto cualquier objeto 'Automóvil' va a tener un color de patente naranja y estático. Por lo 
+    // tanto, para todos igual. Un objeto en particular, por ejemplo, un Subaru no podría tener un color de 
+    // patente distinta que Nissan o cualquier otro, no, son todos iguales.
+    static String colorPatente = "Naranja";
 
-    // -----------------------------------------------------------------------------------------
     public Automovil(){
-        this.id = ++ultimoId;
+
     }
 
     public Automovil(String fabricante, String modelo){
-        this(); // <======================================== Asi llamamos al parametro anterior
         this.fabricante = fabricante;
         this.modelo = modelo;
     }
-    // -----------------------------------------------------------------------------------------
 
     public Automovil(String fabricante, String modelo, String color){
-        this(fabricante, modelo);               
+        this(fabricante, modelo); 
+                                  
         this.color = color;                            
     }
     
@@ -53,18 +45,7 @@ public class Automovil {
     public Automovil(String fabricante, String modelo, String color, double cilindrada, int capacidadEstanque){
         this(fabricante, modelo, color, cilindrada);
         this.capacidadEstanque = capacidadEstanque;
-    } 
-    
-    // -----------------------------------------------------------------------------------------
-    public int getId(){
-        return this.id;
-    }
-
-    public void setId(int id){
-        this.id = id;
-    }
-
-    // -----------------------------------------------------------------------------------------
+    }      
 
     public String getFabricante(){
         return this.fabricante;
@@ -106,23 +87,13 @@ public class Automovil {
         this.capacidadEstanque = capacidadEstanque;
     }        
 
-    // ------------------------------------------------------------------------------------------------
-    // Un metodo 'get' para un atributo estatico, tiene que ser estatico. Lo mismo para el metodo 'set'.
-    public static String getColorPatente(){
-        return colorPatente;
-    }
-
-    public static void setColorPatente(String colorPatente){
-        Automovil.colorPatente = colorPatente;
-    }
-    // ------------------------------------------------------------------------------------------------
-
     public String verDetalle(){
-        return  "auto.id = " + this.id +   // <====================== Agregamos el 'id' al metodo
-                "\nauto.fabricante = " + this.fabricante +
+        return  "auto.fabricante = " + this.fabricante +
                 "\nauto.modelo = " + this.modelo + 
                 "\nauto.color = " + this.color +
-                "\nauto.patenteColor = " + Automovil.colorPatente + 
+                "\nauto.patenteColor = " + Automovil.colorPatente + // Podemos llamarla como 'colorPatente' también
+                                                               // pero no se utiliza el 'this' en atributos 
+                                                               // estaticos.
                 "\nauto.cilindrada = " + this.cilindrada;
     }
 
@@ -169,7 +140,7 @@ public class Automovil {
     // MODIFICACION Metodo 'toString' 
     @Override
     public String toString(){
-        return this.id + " : " + fabricante + " " + modelo;
+        return fabricante + " " + modelo;
     }
 
 }

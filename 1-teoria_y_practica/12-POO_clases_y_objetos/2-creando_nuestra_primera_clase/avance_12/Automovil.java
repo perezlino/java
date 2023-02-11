@@ -1,5 +1,3 @@
-package test.prueba;
-
 
 /*  ORDEN DE LA CLASE 
     =================
@@ -14,34 +12,24 @@ package test.prueba;
 
 public class Automovil {
 
-    // Vamos a generar un id para cada objeto a medida que se van creando
-    // Por defecto, comienza en cero. No es necesario indicar ningun valor.
-    private int id;
-
     private String fabricante;
     private String modelo;
     private String color = "Gris";
     private double cilindrada;
     private int capacidadEstanque = 40;
-    private static String colorPatente = "Naranja";
 
-    // Por defecto, comienza en cero. No es necesario indicar ningun valor.
-    private static int ultimoId;
-
-    // -----------------------------------------------------------------------------------------
     public Automovil(){
-        this.id = ++ultimoId;
+
     }
 
     public Automovil(String fabricante, String modelo){
-        this(); // <======================================== Asi llamamos al parametro anterior
         this.fabricante = fabricante;
         this.modelo = modelo;
     }
-    // -----------------------------------------------------------------------------------------
 
     public Automovil(String fabricante, String modelo, String color){
-        this(fabricante, modelo);               
+        this(fabricante, modelo); 
+                                  
         this.color = color;                            
     }
     
@@ -53,18 +41,7 @@ public class Automovil {
     public Automovil(String fabricante, String modelo, String color, double cilindrada, int capacidadEstanque){
         this(fabricante, modelo, color, cilindrada);
         this.capacidadEstanque = capacidadEstanque;
-    } 
-    
-    // -----------------------------------------------------------------------------------------
-    public int getId(){
-        return this.id;
-    }
-
-    public void setId(int id){
-        this.id = id;
-    }
-
-    // -----------------------------------------------------------------------------------------
+    }      
 
     public String getFabricante(){
         return this.fabricante;
@@ -106,24 +83,11 @@ public class Automovil {
         this.capacidadEstanque = capacidadEstanque;
     }        
 
-    // ------------------------------------------------------------------------------------------------
-    // Un metodo 'get' para un atributo estatico, tiene que ser estatico. Lo mismo para el metodo 'set'.
-    public static String getColorPatente(){
-        return colorPatente;
-    }
-
-    public static void setColorPatente(String colorPatente){
-        Automovil.colorPatente = colorPatente;
-    }
-    // ------------------------------------------------------------------------------------------------
-
     public String verDetalle(){
-        return  "auto.id = " + this.id +   // <====================== Agregamos el 'id' al metodo
-                "\nauto.fabricante = " + this.fabricante +
-                "\nauto.modelo = " + this.modelo + 
-                "\nauto.color = " + this.color +
-                "\nauto.patenteColor = " + Automovil.colorPatente + 
-                "\nauto.cilindrada = " + this.cilindrada;
+        return  "this.fabricante = " + this.fabricante +
+                "\nthis.fabricante = " + this.modelo + 
+                "\nthis.fabricante = " + this.color +
+                "\nthis.fabricante = " + this.cilindrada;
     }
 
     public String acelerar(int rpm){
@@ -147,29 +111,39 @@ public class Automovil {
     public float calcularConsumo(int km, int porcentajeBencina){
         return km / (capacidadEstanque*(porcentajeBencina/100f));        
     }
-  
-    // MODIFICACION Metodo 'equals'    
+
+    // Vamos a modificar el metodo 'equals' que pertenece a la clase Object y vamos a darle una
+    // función customizada. Realizará la comparación enfocandose solo en el valor de 'fabricante'
+    // y 'modelo'.
+
+/*  @Override
+    ---------    
+    Esta anotación es una marca que le indica el compilador en tiempo ejecución de que estamos 
+    sobreescribiendo un método de clase padre, nada más, solamente informativo, solamente de 
+    documentación, no tiene ninguna funcionalidad extra. De hecho lo podríamos quitar y no pasa 
+    nada.
+*/    
     @Override
     public boolean equals(Object obj) {
 
+        // Si ambos son iguales por referencia, retornamos 'true' automaticamente. Ya no es necesario
+        // comparar por atributos.
         if(this == obj){
             return true;
         }
 
-        if(!(obj instanceof Automovil)){   
-            return false;                 
-        }                                  
-                                           
+        // Este 'if' lo escribimos para evitar comparar un objeto que no sea una instancia de la
+        // clase Automovil. Por ejemplo, comparar una instancia de una clase Date o una clase String
+        if(!(obj instanceof Automovil)){    // Por ejemplo: Date fecha = new Date()
+            return false;                   // System.out.println(nissan.equals(fecha));
+        }                                   // Acá, estamos comparando dos objetos que provienen de una
+                                            // clase distinta. Peras con manzanas.  
+
         Automovil a = (Automovil) obj;
+        // el valor de 'fabricante' y 'modelo' no deben ser Nulos
         return (this.fabricante != null && this.modelo != null && 
                 this.fabricante.equals(a.getFabricante()) && 
                 this.modelo.equals(a.getModelo()));
-    }
-
-    // MODIFICACION Metodo 'toString' 
-    @Override
-    public String toString(){
-        return this.id + " : " + fabricante + " " + modelo;
     }
 
 }

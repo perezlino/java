@@ -1,17 +1,3 @@
-package test.prueba;
-
-
-/*  ORDEN DE LA CLASE 
-    =================
-
-    Siempre primero vienen los atributos. Luego el constructor o los constructores. Después vienen los 
-    métodos setter o getter. Y después, los métodos de operación que realizan cálculo, consultas, lo 
-    que sea. Y después, por ejemplo, pueden ir los métodos que queramos sobrescribir o reemplazar de la 
-    clase padre (sobre escritura de método).
-
-*/
-
-
 public class Automovil {
 
     // Vamos a generar un id para cada objeto a medida que se van creando
