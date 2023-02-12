@@ -7,7 +7,8 @@ public class Automovil {
     private Motor motor;                                    
     private Estanque estanque;   
     private Persona conductor;                                      
-    private Rueda[] ruedas;                                           
+    private Rueda[] ruedas; 
+    private int indiceRuedas; // <======================== Agregamos                                          
 
     private TipoAutomovil tipo;
 
@@ -19,6 +20,7 @@ public class Automovil {
 
     public Automovil(){
         this.id = ++ultimoId;
+        this.ruedas = new Rueda[5]; // <======================== Agregamos     
     }
 
     public Automovil(String fabricante, String modelo){
@@ -131,8 +133,15 @@ public class Automovil {
         this.ruedas = ruedas;
     }
 
-    // -----------------------------------------------------------------------------------------------
-    // Modificamos
+    //--------------------------------------------------------------------------------------------------------
+    // Agregamos
+    public void addRueda(Rueda rueda){
+        if(indiceRuedas < this.ruedas.length) {
+            this.ruedas[indiceRuedas++] = rueda;
+        }
+    }
+    //--------------------------------------------------------------------------------------------------------          
+
     public String verDetalle() {
         String detalle =  "auto.id = " + this.id +
                 "\nauto.fabricante = " + this.getFabricante() +
@@ -149,9 +158,19 @@ public class Automovil {
             detalle += "\nauto.cilindrada = " + this.motor.getCilindrada();
         }
 
+        if(conductor != null) {
+            detalle += "\nConductor: " + this.getConductor();
+        }
+
+        if(getRuedas() != null) {
+            detalle += "\nRuedas del automóvil:";
+            for (Rueda r : this.getRuedas()) {
+                detalle += "\n" + r.getFabricante() + ", aro: " + r.getAro() + ", ancho: " + r.getAncho();
+            }
+        }     
+
         return detalle;
-    }
-    // -----------------------------------------------------------------------------------------------    
+    } 
 
     public String acelerar(int rpm){
         return "El auto " + this.fabricante + " acelerando a " + rpm + " rpm";
@@ -168,11 +187,11 @@ public class Automovil {
     }
    
     public float calcularConsumo(int km, float porcentajeBencina){
-        return km / (porcentajeBencina * this.getEstanque().getCapacidad()); // 'getEstanque()' por 'estanque'
+        return km / (porcentajeBencina * this.getEstanque().getCapacidad());
     }
 
     public float calcularConsumo(int km, int porcentajeBencina){
-        return km / (this.getEstanque().getCapacidad()*(porcentajeBencina/100f)); // 'getEstanque()' por 'estanque'      
+        return km / (this.getEstanque().getCapacidad()*(porcentajeBencina/100f));     
     }
   
     // MODIFICACION Metodo 'equals'    

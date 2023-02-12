@@ -131,8 +131,6 @@ public class Automovil {
         this.ruedas = ruedas;
     }
 
-    // -----------------------------------------------------------------------------------------------
-    // Modificamos
     public String verDetalle() {
         String detalle =  "auto.id = " + this.id +
                 "\nauto.fabricante = " + this.getFabricante() +
@@ -149,9 +147,22 @@ public class Automovil {
             detalle += "\nauto.cilindrada = " + this.motor.getCilindrada();
         }
 
+        // ----------------------------------------------------------------------------------------------
+        // Agregamos
+        if(conductor != null) {
+            detalle += "\nConductor: " + this.getConductor();
+        }
+
+        if(getRuedas() != null) {
+            detalle += "\nRuedas del automóvil:";
+            for (Rueda r : this.getRuedas()) {
+                detalle += "\n" + r.getFabricante() + ", aro: " + r.getAro() + ", ancho: " + r.getAncho();
+            }
+        }
+        // ----------------------------------------------------------------------------------------------       
+
         return detalle;
-    }
-    // -----------------------------------------------------------------------------------------------    
+    } 
 
     public String acelerar(int rpm){
         return "El auto " + this.fabricante + " acelerando a " + rpm + " rpm";
@@ -168,11 +179,11 @@ public class Automovil {
     }
    
     public float calcularConsumo(int km, float porcentajeBencina){
-        return km / (porcentajeBencina * this.getEstanque().getCapacidad()); // 'getEstanque()' por 'estanque'
+        return km / (porcentajeBencina * this.getEstanque().getCapacidad());
     }
 
     public float calcularConsumo(int km, int porcentajeBencina){
-        return km / (this.getEstanque().getCapacidad()*(porcentajeBencina/100f)); // 'getEstanque()' por 'estanque'      
+        return km / (this.getEstanque().getCapacidad()*(porcentajeBencina/100f));     
     }
   
     // MODIFICACION Metodo 'equals'    
