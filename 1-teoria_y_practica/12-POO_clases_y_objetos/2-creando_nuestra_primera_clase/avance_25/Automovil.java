@@ -1,16 +1,13 @@
-package test.prueba;
-
-
 public class Automovil {
 
     private int id;
     private String fabricante;
     private String modelo;
     private Color color = Color.GRIS; 
-    private Motor motor;                                    
-    private Estanque estanque;   
-    private Persona conductor;                                      
-    private Rueda[] ruedas;                                           
+    private Motor motor; //private double cilindrada;                     <=======                  
+    private Estanque estanque; //private int capacidadEstanque = 40;      <======= 
+    private Persona conductor; //                                         <======= 
+    private Rueda[] ruedas;    //                                         <======= 
 
     private TipoAutomovil tipo;
 
@@ -19,6 +16,14 @@ public class Automovil {
 
     public static final Integer VELOCIDAD_MAX_CARRETERA = 120;
     public static final int VELOCIDAD_MAX_CIUDAD = 60;
+
+    // Dado que estamos utilizando el enum 'Color' estas constantes ya no las usamos
+
+    // public static final String COLOR_ROJO = "Rojo";
+    // public static final String COLOR_AMARILLO = "AMARILLO";
+    // public static final String COLOR_AZUL = "Azul";
+    // public static final String COLOR_BLANCO = "Blanco";
+    // public static final String COLOR_GRIS = "Gris Oscuro";
 
     public Automovil(){
         this.id = ++ultimoId;
@@ -34,16 +39,19 @@ public class Automovil {
         this.color = color;                            
     }
 
+    // Modificamos 'double cilindrada' por 'Motor motor'
     public Automovil(String fabricante, String modelo, Color color, Motor motor){
         this(fabricante, modelo, color); 
-        this.motor = motor;  
+        this.motor = motor; //this.cilindrada = cilindrada;    
     }                                   
 
+    // Modificamos 'double cilindrada' por 'Motor motor' y 'int capacidadEstanque' por 'Estanque estanque'
     public Automovil(String fabricante, String modelo, Color color, Motor motor, Estanque estanque){
         this(fabricante, modelo, color, motor);
-        this.estanque = estanque; 
+        this.estanque = estanque; //this.capacidadEstanque = capacidadEstanque;
     } 
 
+    // Agregamos
     public Automovil(String fabricante, String modelo, Color color, Motor motor, Estanque estanque, Persona conductor, Rueda[] ruedas) {
         this(fabricante, modelo, color, motor, estanque);
         this.conductor = conductor;
@@ -80,7 +88,27 @@ public class Automovil {
  
     public void setColor(Color color){
         this.color = color;
-    }        
+    }       
+
+    // -------------------------------------------------------------------------------------------------
+    // Esto lo debemos eliminar:
+
+    // public double getCilindrada(){
+    //     return this.cilindrada;
+    // }
+
+    // public void setCilindrada(double cilindrada){
+    //     this.cilindrada = cilindrada;
+    // }        
+
+    // public int getcapacidadEstanque(){
+    //     return this.capacidadEstanque;
+    // }
+
+    // public void setCapacidadEstanque(int capacidadEstanque){
+    //     this.capacidadEstanque = capacidadEstanque;
+    // }  
+    // -------------------------------------------------------------------------------------------------      
   
     public static Color getColorPatente(){
         return colorPatente;
@@ -98,6 +126,8 @@ public class Automovil {
         this.tipo = tipo;
     }
 
+    // ------------------------------------------------------------------------------------------------- 
+    //Agregamos
     public Motor getMotor() {
         return motor;
     }
@@ -106,11 +136,10 @@ public class Automovil {
         this.motor = motor;
     }
 
-    // Modificamos
     public Estanque getEstanque() {
-        if(estanque == null){
-            this.estanque = new Estanque();
-        }
+        // if(estanque == null){
+        //     this.estanque = new Estanque();
+        // }
         return estanque;
     }
 
@@ -134,27 +163,18 @@ public class Automovil {
         this.ruedas = ruedas;
     }
 
-    // -----------------------------------------------------------------------------------------------
-    // Modificamos
-    public String verDetalle() {
-        String detalle =  "auto.id = " + this.id +
-                "\nauto.fabricante = " + this.getFabricante() +
-                "\nauto.modelo = " + this.getModelo();
+    // ------------------------------------------------------------------------------------------------- 
 
-        if(this.getTipo() != null) {
-            detalle += "\nauto.tipo = " + this.getTipo().getDescripcion();
-        }
 
-        detalle += "\nauto.color = " + this.color +
-                "\nauto.patenteColor = " + colorPatente;
-
-        if(this.motor != null) {
-            detalle += "\nauto.cilindrada = " + this.motor.getCilindrada();
-        }
-
-        return detalle;
+    public String verDetalle(){
+        return  "auto.id = " + this.id +   
+                "\nauto.fabricante = " + this.fabricante +
+                "\nauto.modelo = " + this.modelo + 
+                "\nauto.tipo = " + this.getTipo().getDescripcion() + 
+                "\nauto.color = " + this.color.getColor() +
+                "\nauto.patenteColor = " + Automovil.colorPatente.getColor() + 
+                "\nauto.cilindrada = " + this.motor.getCilindrada(); // this.cilindrada
     }
-    // -----------------------------------------------------------------------------------------------    
 
     public String acelerar(int rpm){
         return "El auto " + this.fabricante + " acelerando a " + rpm + " rpm";
@@ -171,11 +191,11 @@ public class Automovil {
     }
    
     public float calcularConsumo(int km, float porcentajeBencina){
-        return km / (porcentajeBencina * this.getEstanque().getCapacidad()); // 'getEstanque()' por 'estanque'
+        return km / (porcentajeBencina * this.estanque.getCapacidad()); // capacidadEstanque
     }
 
     public float calcularConsumo(int km, int porcentajeBencina){
-        return km / (this.getEstanque().getCapacidad()*(porcentajeBencina/100f)); // 'getEstanque()' por 'estanque'      
+        return km / (this.estanque.getCapacidad()*(porcentajeBencina/100f)); // capacidadEstanque      
     }
   
     // MODIFICACION Metodo 'equals'    

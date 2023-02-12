@@ -1,6 +1,3 @@
-package test.prueba;
-
-
 public class Automovil {
 
     private int id;
@@ -36,7 +33,7 @@ public class Automovil {
 
     public Automovil(String fabricante, String modelo, Color color, Motor motor){
         this(fabricante, modelo, color); 
-        this.motor = motor;  
+        this.motor = motor; 
     }                                   
 
     public Automovil(String fabricante, String modelo, Color color, Motor motor, Estanque estanque){

@@ -1,7 +1,4 @@
-package test.prueba;
-
 public class Motor {
-    
     private double cilindrada;
     private TipoMotor tipo;
 
