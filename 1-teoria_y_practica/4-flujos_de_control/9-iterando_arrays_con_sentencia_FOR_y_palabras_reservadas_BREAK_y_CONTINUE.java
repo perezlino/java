@@ -2,6 +2,9 @@
     =============== FLUJO DE CONTROL - FOR ===============
     ======================================================
 
+
+    break = Finaliza el ciclo
+
 */
     import javax.swing.*;
 

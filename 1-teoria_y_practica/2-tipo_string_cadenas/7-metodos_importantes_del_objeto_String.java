@@ -71,4 +71,17 @@ trabalenguas.endsWith("uas") = ¿'trabalenguas' termina con los caracteres 'uas'
   trabalenguas
   trabalenguas = Eliminamos los espacios inicial y final = trabalenguas
   
+
+
+    DIFERENCIA entre == y equals
+    ============================
+
 */
+            String str1 = "Hola Alfonso"; 
+            String str2 = new String("Hola Alfonso");
+
+            // chequea si son el mismo objeto
+            System.out.println("Son el mismo objeto?" + (str1 == str2));
+
+            // chequea si tienen el mismo valor
+            System.out.println("Tienen el mismo valor?" + str1.equals(str2));

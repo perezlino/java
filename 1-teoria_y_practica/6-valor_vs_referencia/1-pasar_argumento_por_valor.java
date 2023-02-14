@@ -11,7 +11,9 @@
                   simplemente usando el nombre de la clase o de forma directa si estamos en otro método 
                   estático como el 'main'. Por tanto, el 'main' puede invocar este método sin ningún 
                   problema, ya que, ambos son estático. 
-    -	'void': no devuelve ningún valor, no retorna nada
+    -	'void': no devuelve ningún valor, no 'retorna' nada (no podemos utilizar 'return')
+
+    Dado que el metodo 'main' es 'estatico' solo puede llamar a otros metodos que sean 'estaticos'.
 */
     public class PasarPorValor {
         public static void main(String[] args) {

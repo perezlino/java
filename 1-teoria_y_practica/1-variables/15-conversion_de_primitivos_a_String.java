@@ -8,11 +8,11 @@
             int numeroInt = 100;
             System.out.println("numeroInt = " + numeroInt);
             
-            // Primera forma: Int a String
+            // Primera forma: int a String
             String numeroStr = Integer.toString(numeroInt);
             System.out.println("numeroStr = " + numeroStr);
             
-            // Segunda forma: Int a String
+            // Segunda forma: int a String
             numeroStr = String.valueOf(numeroInt);
             System.out.println("numeroStr = " + numeroStr);
 

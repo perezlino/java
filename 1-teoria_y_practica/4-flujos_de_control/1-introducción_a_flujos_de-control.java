@@ -48,6 +48,9 @@
     SWITCH CASE
     ===========
 
+    - No es necesario una expresion booleana como en el caso del 'if'. La expresion
+      puede ser del tipo int o String, por ejemplo. 
+
     - La sentencia 'switch' o interruptor se utiliza para realizar sentencias
       condicionalmente basadas en alguna expresión.
 
@@ -57,7 +60,7 @@
       continue con la siguiente linea.
      ____________________________________________________________________________
     |                                                                            |              
-    |    switch(variable){                                                       |  
+    |    switch(expresion){                                                       |  
     |        case valor1:                                                        |      
     |           // ejecuta la sentencia 1                                        |  
     |           break;                                                           |

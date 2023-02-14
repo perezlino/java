@@ -23,15 +23,19 @@
     ===================
 
     Existen dos categorias de datos principales:
-     ______________   ______________
-    |              | |              |
-    |  primitivos  | |  referencia  | 
-    |______________| |______________|
-    
+     ______________   _________________
+    |              | |  referenciados  |          |
+    |  primitivos  | |  (tipo Object)  | 
+    |______________| |_________________|
+
+    Tipos enteros     Clases
+    Tipos Flotantes   Arrays
+                      Interfaces
+
     - Los tipos primitivos contienen un solo valor, no es un objeto, no es una instancia. Incluyen los tipos 
       como los enteros, flotante, los caracteres, booleanos, etc.
     
-    - Como tipos de datos referenciados tenemos los arreglos (arrays), las clases y las interfaces
+    - Como tipos de datos referenciados tenemos los "Arrays", las "Clases" y las "Interfaces"
 
                                           int numero;
                                           int numero = 10;

@@ -23,7 +23,7 @@
     Modelo A
     ========
 */
-    import java.util.Scanner;
+    import java.util.Scanner; // Usamos el paquete 'java.util'
 
     public class SistemasNumericosEntradaScanner {
         public static void main(String[] args) {
@@ -120,3 +120,25 @@ Numero binario de 50 = 110010
 Numero octal de 50 = 62          
 Numero hexadecimal de 50 = 32
 */
+
+
+//  Modelo C
+//  ========
+
+import java.util.Scanner;
+
+public class SistemasNumericosEntradaScanner {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Escribe tu nombre:");
+        var usuario = consola.nextLine();
+        System.out.println("Usuario = " + usuario); // Usuario = Alfonso
+
+        System.out.println("Escribe tu titulo universitario:");
+        var titulo = consola.nextLine();
+        System.out.println("Resultado = " titulo + " " + usuario); // Resultado = Ingeniero Industrial Alfonso   
+
+    }
+}

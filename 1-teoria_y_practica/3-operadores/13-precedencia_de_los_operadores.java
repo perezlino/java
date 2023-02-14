@@ -37,7 +37,7 @@
 
             // Primero resuelve operacion de (--i + j++), luego realiza la división (k/3d) y luego realiza
             // la multiplicación (k/3d) * 10
-            double promedio7 = --i + j++ + k / 3d * 10; 
+            double promedio7 = --i + j++ + k / 3d * 10; // 13 + 9 + 20 / 3d * 10
             System.out.println("promedio7 = " + promedio7); // promedio7 = 87.66666666666667
 
         }

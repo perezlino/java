@@ -26,6 +26,10 @@
             int numero = 11;
             System.out.println("numero = " + numero);
 
+            /* Modificamos el valor de la variable 'numero'. */
+            numero = 7;
+            System.out.println("numero = " + numero);
+
             /* También puede declarar una variable sin asignar el valor y asignar el valor más adelante: */
             int miNumero;
             miNumero = 25;

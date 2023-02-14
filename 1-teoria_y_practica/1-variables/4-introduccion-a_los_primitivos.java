@@ -24,10 +24,10 @@
     - Un boolean expresa un valor de verdad, puede ser VERDADERO O FALSO.
     - Para especificar un literal boolean, se usan las palabras clave 'true' o 'false',
       ambas escritas en minúsculas.  
-*/
+
                                 boolean a = false;
                                 boolean b = true;  
-/*   
+  
 
     CHAR
     ====
@@ -38,21 +38,10 @@
     de exclamación invertida ( ! ) en la tabla.
 
     - Usa el código UNICODE y cada caracter ocupa 16 bits
-*/ 
+ 
                                 char a = 'a';
                                 char b = '1';
                                 char c = '\u0021';
-/*
-                            |---------------------|---------------------|
-                            | Secuencia de escape |       Simbolo       |
-                            |---------------------|---------------------|
-                            |          \b         | Retroceso           |    
-                            |          \n         | Nueva linea         |
-                            |          \r         | Retorno del carro   |
-                            |          \t         | Tabulador           |
-                            |          \\         | Diagonal invertida  |
-                            |          \"         | Comillas dobles     |
-                            |---------------------|---------------------|
 
 
     NUMEROS ENTEROS
@@ -66,7 +55,7 @@
     - Son 4 tipos: 'byte', 'short', 'int' y 'long'
     - Un entero es un numero del conjunto Z = {..., -2, -1, 0, 1, 2, ...}
     - Difieren en las precisiones y pueden ser positivos o negativos
-*/
+
                                 // entre -128 a 127
                                 byte enteroByte  = 127;
 
@@ -78,20 +67,20 @@
 
                                 // entre -9223372036854775808 a 9223372036854775807
                                 long enteroLong  = 9223372036854775807L;
-/*
+
 
     NUMEROS REALES
     ==============
     
     - Es un tipo de dato para guardar números reales en coma flotante con precisión simple y doble
     - Los números de punto flotante (también conocidos como "flotantes", "dobles" o "números reales")
-*/
+
                                 // entre -1.4E-45 a 3.4028235E38
                                 float realFloat = 3.1416f;
 
                                 // entre -4.9E-324 a 1.7976931348623157E308
                                 double realDouble = 4.7029235E3;
-/* 
+
 
     Todo primitivo tiene su clase que envuelve al primitivo, que se le conoce como clase equivalente o 
     clase wrapper. Viene de anidar, de envolver el valor de primitivo para darle funcionalidad extra. 
@@ -120,4 +109,28 @@
     | float   | Numero real precisión simple  | 32 bits |  4   |    Float          | 0.0f              | 
     | double  | Numero real precisión doble   | 64 bits |  8   |    Double         | 0.0d              | 
     |---------|-------------------------------|---------|------|-------------------|-------------------|
+
+
+
+    CARACTERES ESPECIALES
+    =====================                                
+
+                            |---------------------|---------------------|
+                            | Secuencia de escape |       Simbolo       |
+                            |---------------------|---------------------|
+                            |          \b         | Retroceso           |    
+                            |          \n         | Nueva linea         |
+                            |          \r         | Retorno del carro   |
+                            |          \t         | Tabulador           |
+                            |          \\         | Diagonal invertida  |
+                            |          \"         | Comilla doble       |
+                            |          \'         | Comilla simple      |
+                            |---------------------|---------------------|    
+
+    String nombre = "Alfonso"                            
+    System.out.println("Comilla simple: \'" + nombre + "\'" ); ---> Comilla simple: 'Alfonso'
+
+    String nombre = "Alfonso"                            
+    System.out.println("Comilla doble: \"" + nombre + "\"" ); ---> Comilla simple: "Alfonso"
+                            
  */   
