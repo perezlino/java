@@ -1,4 +1,4 @@
-package test;
+package directorio;
 
 public class Persona {
 

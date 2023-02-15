@@ -21,25 +21,25 @@
     public class PasarPorReferencia2 {
         public static void main(String[] args) {
 
-            Persona persona = new Persona();
-            persona.modificarNombre("Alfonso");
+            Persona persona1 = new Persona();
+            persona1.modificarNombre("Alfonso");
 
             System.out.println("iniciamos el método main");
 
-            System.out.println("persona.nombre = " + persona.leerNombre());
+            System.out.println("persona1.nombre = " + persona1.leerNombre());
             System.out.println("Antes de llamar al método test");
             System.out.println("================================");
 /* 
             iniciamos el método main
-            persona.nombre = Alfonso
+            persona1.nombre = Alfonso
             Antes de llamar al método test
             ================================ 
 
-            - Llamamos al metodo 'test' y como argumento le entregamos un 'objeto' de la Clase 'Persona'
-            - En este caso le entregamos el Objeto que acabamos de crear, 'persona'.
+            - Llamamos al metodo 'test' y como argumento le entregamos un 'objeto' de la Clase 'persona1'
+            - En este caso le entregamos el Objeto que acabamos de crear, 'persona1'.
             - Dado que el metodo 'main' es 'estatico' solo puede llamar a otros metodos que sean 'estaticos'.
 */
-            test(persona);
+            test(persona1);
             System.out.println("Después de llamar al método test");
             System.out.println("================================");
 /* 
@@ -49,12 +49,12 @@
             ================================ 
 */
 
-            System.out.println("persona.nombre = " + persona.leerNombre());
-            System.out.println("Finaliza el método main con los datos de la persona modificados!");
+            System.out.println("persona1.nombre = " + persona1.leerNombre());
+            System.out.println("Finaliza el método main con los datos de la persona1 modificados!");
         }
 /* 
-            persona.nombre = Pepe
-            Finaliza el método main con los datos de la persona modificados! 
+            persona1.nombre = Pepe
+            Finaliza el método main con los datos de la persona1 modificados! 
 
             -----------------------------------------------------------------------------------------
 */        
