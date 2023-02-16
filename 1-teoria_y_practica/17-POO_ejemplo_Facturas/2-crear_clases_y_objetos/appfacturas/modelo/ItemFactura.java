@@ -7,7 +7,7 @@ public class ItemFactura {
     // Recordar que un item de factura está asociado a un solo producto y también podría tener 
     // una relación con Factura, pero no necesario. No es tan importante que un detalle, una línea, 
     // tenga la referencia de su factura, porque nunca vamos a consultar una línea en particular 
-    // y querer saber de qué factura pertenece. Siempre se miraN los items o la línea dentro de la 
+    // y querer saber de qué factura pertenece. Siempre se miran los items o la línea dentro de la 
     // Factura, es decir, en conjunto, es parte de la factura. Nunca vamos a consultar de forma individual.
     // Siempre con la factura. Entonces solamente 'private Producto producto'.
 

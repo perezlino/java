@@ -3,7 +3,7 @@
     ======================================================
 
     - Un cliente puede tener asociado muchas facturas. Y una factura solo puede tener 
-      aspciado un cliente.
+      asociado un cliente.
 
     - Una factura puede tener varios itemsFactura. Será un array.
 

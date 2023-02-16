@@ -1,7 +1,10 @@
 /*  ======================================================
     ========= MATRIZ DE STRING E ITERAR CON FOR ==========
     ======================================================
-  
+
+
+    EJEMPLO 1
+    =========
 */
     public class EjemploMatricesStringFor {
         public static void main(String[] args) {
@@ -17,7 +20,7 @@
             System.out.println("Iterando con for: ");
             for(int i = 0; i < nombres.length; i++){
     
-                for(int j = 0; j < nombres[i].length; j++){
+                for(int j = 0; j < nombres[i].length; j++){ // Ejemplo: nombres[0].length = 2
                     System.out.print(nombres[i][j] + "\t");
                 }
                 System.out.println();
@@ -45,3 +48,28 @@
 */
         }
     }
+/* 
+
+    EJEMPLO 2
+    =========
+*/
+public class EjemploMatricesStringFor {
+    public static void main(String[] args) {
+
+        String frutas[][] = {{"Naranja", "Limon"}, {"Fresa","Zarzamora","Manzana"}};
+
+        System.out.println("Iterando con for: ");
+        for(int i = 0; i < frutas.length; i++){
+
+            for(int j = 0; j < frutas[i].length; j++){ // Ejemplo: nombres[0].length = 2
+                System.out.print(frutas[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
+/*
+        Iterando con for: 
+        Naranja Limon
+        Fresa   Zarzamora   Manzana
+*/
