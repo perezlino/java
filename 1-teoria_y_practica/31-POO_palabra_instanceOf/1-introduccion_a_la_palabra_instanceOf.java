@@ -23,4 +23,3 @@
     Así que una cosa es el tipo de la variable y otra cosa es el tipo al cual está apuntando en memoria.                          
 
 */
-
