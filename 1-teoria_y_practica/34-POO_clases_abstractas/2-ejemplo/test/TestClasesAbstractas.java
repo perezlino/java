@@ -11,7 +11,7 @@ public class TestClasesAbstractas {
         //FiguraGeometrica figura = new FiguraGeometrica(); ===========> Devuelve ERROR
         
         FiguraGeometrica figura = new Rectangulo("Rectangulo");
-        figura.dibujar();
+        figura.dibujar(); // Se imprime un: Rectangulo
     }
    
 }

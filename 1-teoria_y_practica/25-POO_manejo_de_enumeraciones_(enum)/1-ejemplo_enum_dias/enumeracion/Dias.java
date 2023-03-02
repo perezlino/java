@@ -4,7 +4,7 @@
 
     Una 'Enumeracion' es un tipo similar a una Clase, pero es una Clase particular que contiene varios
     elementos. Y por ello se le conoce como 'Enumeracion', ya que, va a contener varios elementos
-    definidos dentro de esta enuemracion.
+    definidos dentro de esta enumeracion.
 
 */
 package enumeracion;
